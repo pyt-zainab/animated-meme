@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Slider Code */
+
+:root {
+    --bgColor: rgb(255, 252, 241); /* Define background color variable */
+}
+    #index3 {
+        font-family: sans-serif;
+        font-weight: lighter;
+    }
+body {
+    /*overflow: hidden; /* Hide overflow to prevent scrolling */
+    background: var(--bgColor); /* Set background color */
+    font-family: sans-serif; /* Set font family */
+    user-select: none; /* Prevent text selection */
+    display: grid; /* Use grid for layout */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+}
+
+#slider {
+    position: relative; /* Set position relative for slider */
+    width: 50%; /* Set width of slider */
+    height: 32vw; /* Set height of slider */
+    margin: 80px auto; /* Set margin for centering */
+    transform-style: preserve-3d; /* Preserve 3D transform */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Set font family for slider */
+    perspective: 1400px; /* Set perspective for 3D effect */
+}
+
+      /* Styles for radio buttons */
+input[type="radio"] {
+    position: relative;
+    top: 100%;
+    left: 50%;
+    height: 18px;
+    margin: 0 15px 0 0;
+    transform: translateX(-83px);
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+input[type="radio"]:nth-child(5) {
+    margin-right: 0px;
+}
+
+input[type="radio"]:checked {
+    opacity: 1;
+}
+
+#slider label, 
+#slider label img {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    color: white;
+    font-size: 70px;
+    cursor: pointer;
+    transition: transform 400ms ease;
+}
+
+/* Active Slide */
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+    transform: translate3d(0%, 0, 0px);
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px
+    6px rga(0, 0, 0, 0.2);
+}
+
+/* Next Slide */
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+    transform: translate3d(20%, 0, -100px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px 
+    rgba(0, 0, 0, 0.2);
+}
+
+/* Previous Slides */
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+    transform: translate3d(-20%, 0, -100px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px 
+    rgba(0, 0, 0, 0.2);
+}
+/* Next to Next */
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+    transform: translate3d(40%, 0, -250px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+/* Previous to Previous Slide */
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+    transform: translate3d(40%, 0, -250px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+ /* For logo */
+ .image-container {
+    width: 50px; /* Adjust the width of the container */
+    height: 50px; /* Adjust the height of the container */
+    overflow: hidden; /* Ensures the image stays within the circular container */
+    }
+    .image-container img {
+    width: 100%; /* Ensures the image fills the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    }
+    /*Style for navigation bar*/
+      nav {
+        background-color: rgb(101, 235, 101);
+        color: white; /* White text color */
+        padding: 10px; /* Padding inside the navigation bar */
+        position: fixed; /* Fix the navigation bar position */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        padding-right: 10px;
+        height: fit-content;
+        width: 100%; /* Spread navigation bar across the screen */
+        display: flex; /* Use flexbox for layout */
+        justify-content: space-between; /* Spread items evenly */
+        align-items: center; /* Vertically center items */
+    } 
+    nav img{
+        margin-left: 10px; /* To add some space between image and link*/
+        height: auto;  /* To maintain aspect ratio*/
+        width: 50px; /* Adjust width of the image*/
+    }
+     nav ul{
+        list-style-type: none; /* Remove default Style */
+        display: flex; /* Use flex for layout*/
+       text-decoration: none; 
+     } 
+    nav ul li{
+        margin-right: 10px; /* Add spacing between item */
+         text-decoration: none;
+     }
+     nav ul li a {
+        color: Black; /* Black text color for link */
+        text-decoration: none; /* To remove line from link */
+        font-weight: bold; /* To make the text bold */
+        padding: 10px 20px; /* Add padding to button */
+        border: 1px solid black;
+        border-radius: 5px; /* For rounded corners */
+        transition: background-color 0.3s; /* Smooth transition on hover effect */
+     }
+     nav ul li a:hover {
+        background-color: rgb(178, 240, 178); /*Darkens background color on hover */
+        text-decoration: none;
+        color: black;
+     }
+      .food {
+        padding-left: 150px;
+        padding-right: 150px;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 2px;
+        line-break: strict;
+        font-family: sans-serif;
+      }
+      /* head of green container */
+       #head {
+        font-size: 30px;
+        font-weight: bolder;
+        text-align: center;
+       }
+       #audio-container {
+        display: none; /* Hide the audio element */
+      }
+        /* Heading Code */
+     h1 {
+        text-align: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bolder;
+        background: conic-gradient(rgb(1, 46, 24), rgb(36, 141, 81), rgb(23, 170, 79));
+        color: transparent;
+        background-clip: text;
+        background-size: 1800px 1900px 1000px;
+        animation: rgb 5s infinite linear;
+      }
+      @keyframes rgb {
+             /* Keyframes for gradient animation */
+        0% {
+            background-position: 0 0;
+        }
+        25% {
+            background-position: 0 100%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        75% {
+            background-position: 100% 0;
+        }
+        100% {
+            background-position: 0 0;
+        }
+      }
+          /* Image in container code */
+          .container-fluid {
+            background-color: #6ba191;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .text {
+            width: 45%;
+            padding: 20px;
+          }
+        
+          .image {
+            width: 45%;
+          }
+        
+          img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+          }
+        
+          @media (max-width: 768px) {
+            .container {
+              flex-direction: column;
+            }
+        
+            .text, .image {
+              width: 100%;
+            }
+        }
+      /* Footer's Code */
+      footer {
+        position: relative;
+        width: 100%;
+        background-color: #198d6a;
+        min-height: 100px;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    footer .social_icon, 
+    footer .menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+
+    footer .social_icon li, 
+    footer .menu li  {
+        list-style: none;
+    }
+    footer .social_icon li a {
+        font-size: 2em;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+    }
+     footer .social_icon li a:hover {
+        transform: translateY(-10px);
+     }
+     footer .menu li a {
+        font-size: 1.2em;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        text-decoration: none;
+        opacity: 0.75;
+     }
+
+     footer .menu li a:hover {
+        opacity: 1;
+     }
+     footer p {
+        color: #fff;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+     }
+     footer .wave {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(noo.jpg);
+        background-size: 1000px 100px;
+     }
+     footer .wave#wave1 {
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animateWave 4s linear infinite;
+     }
+
+     footer .wave#wave2 {
+        z-index: 999;
+        opacity: 1;
+        bottom: 10px;
+        animation: animateWave_02 4s linear infinite;
+     }
+
+     footer .wave#wave3 {
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15;
+        animation: animateWave 3s linear infinite;
+     }
+     footer .wave#wave4 {
+        z-index: 999;
+        opacity: 0.7;
+        bottom: 20px;
+        animation: animateWave_02 3s linear infinite;
+     }
+
+     @keyframes animateWave {
+        0% {
+            background-position-x: 1000px;
+        }
+        100% {
+            background-position-x: 0px;
+        }
+     }
+       @keyframes animateWave_02 {
+        0% {
+            background-position-x: 0px;
+        }
+        100% {
+            background-position-x: 1000px;
+        }
+       }
+       /* CSS for login button */
+       .fixed-button {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+        padding: 10px 20px;
+        background-color: red;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .fixed-button {
+        text-decoration: none;
+       color: rgb(13, 218, 13);
+       padding: 1 rem;
+       font-weight: 800;
+       border: 1px solid rgb(13, 218, 13);
+       font-size: 24px;
+       transition: 0.7s;
+       font-style: italic;
+      }
+       .fixed-button:hover {
+           background: rgb(13, 218, 13);
+            color: black;
+            border-radius: 5px;
+            font-size: 30px;
+            box-shadow: 0 0 5px rgb(13, 218, 13), 
+            0 0 25px rgb(13, 218, 13),
+            0 0 50px rgb(13, 218, 13), 
+            0 0 100px rgb(13, 218, 13);
+            
+       }

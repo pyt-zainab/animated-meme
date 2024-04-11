@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+<!-- Audio player -->
+<audio controls autoplay>
+    <source src="things.mp3" type="audio/mpeg" loop>
+
+</audio>
+
+<!-- Header section -->
+<header>
+    <!-- Navigation bar -->
+    <nav>
+        <!-- Image container -->
+        <div class="image-container">
+            <img src="your-image.jpg" alt="Your Image">
+        </div>
+        <!-- Navigation links -->
+        <ul>
+            <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+            <li><a href="login.html" style="text-decoration: none;">Login</a></li>
+            <li><a href="getinvolved.html" style="text-decoration: none;">Get Involved</a></li>
+            <li><a href="profolio.html" style="text-decoration: none;">Profolio</a></li>
+        </ul>
+    </nav>
+
+<div class="container">
+    <div class="glass-container">
+        <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+         <p>Don't have an account</p>
+         <a href="sign.html" id="sign">Sign up</a><br>
+       <!-- <input type="submit" value="Login"> -->
+       <button style="background-color: #56975a;"><a href="thank.html" id="html">Login</a></button>
+    </form>
+</div>
+    </div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event){
+        event.preventDefault(); // prevent the form from submitting
+
+        // Get the values from the form
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Here you would typically send these values to a server for authentication
+       
+        console.log("Username:", username);
+        console.log("Password:", password);
+
+        // You can add further logic here, such as redirecting the user upon successful login
+
+    });
+</script>
+
+</body>
+</html>
